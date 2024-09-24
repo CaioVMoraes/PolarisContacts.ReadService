@@ -1,4 +1,4 @@
-using Job.ReguaCobrancaDocumentos.CrossCutting.DependencyInjection.Extensions.AddInfrastructureLayer;
+using PolarisContacts.ReadService.CrossCutting.DependencyInjection.Extensions.AddInfrastructureLayer;
 using Microsoft.Extensions.DependencyInjection;
 using PolarisContacts.ReadService.CrossCutting.DependencyInjection.Extensions.AddApplicationLayer;
 

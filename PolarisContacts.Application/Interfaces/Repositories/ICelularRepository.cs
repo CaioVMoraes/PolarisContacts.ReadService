@@ -9,8 +9,5 @@ namespace PolarisContacts.Application.Interfaces.Repositories
     {
         Task<IEnumerable<Celular>> GetCelularesByIdContato(int idContato);
         Task<Celular> GetCelularById(int id);
-        Task<int> AddCelular(Celular celular, IDbConnection connection, IDbTransaction transaction);
-        Task<bool> UpdateCelular(Celular celular);
-        Task<bool> DeleteCelular(int id);
     }
 }

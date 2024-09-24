@@ -8,12 +8,9 @@ using System.Threading.Tasks;
 
 namespace PolarisContacts.Infrastructure.Repositories
 {
-
-
     public class EnderecoRepository(IDatabaseConnection dbConnection) : IEnderecoRepository
     {
         private readonly IDatabaseConnection _dbConnection = dbConnection;
-
 
         public async Task<IEnumerable<Endereco>> GetEnderecosByIdContato(int idContato)
         {

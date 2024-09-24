@@ -8,10 +8,9 @@ using static PolarisContacts.CrossCutting.Helpers.Exceptions.CustomExceptions;
 
 namespace PolarisContacts.Application.Services
 {
-    public class EmailService(IEmailRepository emailRepository, IContatoService contatoService) : IEmailService
+    public class EmailService(IEmailRepository emailRepository) : IEmailService
     {
         private readonly IEmailRepository _emailRepository = emailRepository;
-        private readonly IContatoService _contatoService = contatoService;
 
         public async Task<IEnumerable<Email>> GetEmailsByIdContato(int idContato)
         {
@@ -39,6 +38,5 @@ namespace PolarisContacts.Application.Services
 
             return email;
         }
-
     }
 }

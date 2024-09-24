@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PolarisContacts.Application.Interfaces.Services;
 using PolarisContacts.Application.Services;
+using PolarisContacts.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
 {
@@ -11,20 +12,43 @@ namespace PolarisContacts.ReadService.Controllers
         private readonly ILogger<ContatoController> _logger = logger;
         private readonly IContatoService _contatoService = contatoService;
 
-        [HttpPost]
-        public bool Post()
+        [HttpGet]
+        public async Task<IEnumerable<Contato>> GetAllContatosByIdUsuario(int idUsuario)
         {
             try
             {
-                _contatoService.AddContato(new Domain.Contato());
+                return await _contatoService.GetAllContatosByIdUsuario(idUsuario);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
-
-            return true;
         }
+
+        [HttpGet]
+        public async Task<Contato> GetContatoByIdAsync(int idContato)
+        {
+            try
+            {
+                return await _contatoService.GetContatoByIdAsync(idContato);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<Contato>> SearchContatosByIdUsuario(int idUsuario, string searchTerm)
+        {
+            try
+            {
+                return await _contatoService.SearchContatosByIdUsuario(idUsuario, searchTerm);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }        
     }
 }

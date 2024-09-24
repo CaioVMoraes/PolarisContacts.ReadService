@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PolarisContacts.Application.Interfaces.Services;
 using PolarisContacts.Application.Services;
+using PolarisContacts.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
 {
@@ -11,20 +12,17 @@ namespace PolarisContacts.ReadService.Controllers
         private readonly ILogger<UsuarioController> _logger = logger;
         private readonly IUsuarioService _usuarioService = usuarioService;
 
-        [HttpPost]
-        public async Task<bool> Post()
+        [HttpGet]
+        public async Task<Usuario> GetUserByPasswordAsync(string login, string senha)
         {
             try
             {
-                await _usuarioService.CreateUserAsync("login", "senha");
+                return await _usuarioService.GetUserByPasswordAsync(login, senha);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
-
-            return true;
         }
     }
 }

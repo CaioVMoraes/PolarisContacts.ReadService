@@ -38,6 +38,5 @@ namespace PolarisContacts.Application.Services
 
             return endereco;
         }
-
     }
 }

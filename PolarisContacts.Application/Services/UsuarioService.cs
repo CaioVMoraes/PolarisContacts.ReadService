@@ -23,7 +23,6 @@ namespace PolarisContacts.Application.Services
 
             return await _usuarioRepository.GetUserByPasswordAsync(login, senha);
         }
-
     }
 }
 

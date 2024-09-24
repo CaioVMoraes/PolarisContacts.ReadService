@@ -12,7 +12,6 @@ namespace PolarisContacts.Infrastructure.Repositories
     {
         private readonly IDatabaseConnection _dbConnection = dbConnection;
 
-
         public async Task<IEnumerable<Contato>> GetAllContatosByIdUsuario(int idUsuario)
         {
             using IDbConnection conn = _dbConnection.AbrirConexao();

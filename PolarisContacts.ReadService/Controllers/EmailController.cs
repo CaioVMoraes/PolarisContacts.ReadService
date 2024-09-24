@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PolarisContacts.Application.Interfaces.Services;
 using PolarisContacts.Application.Services;
+using PolarisContacts.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
 {
@@ -11,20 +12,30 @@ namespace PolarisContacts.ReadService.Controllers
         private readonly ILogger<EmailController> _logger = logger;
         private readonly IEmailService _emailService = emailService;
 
-        [HttpPost]
-        public bool Post()
+        [HttpGet]
+        public async Task<IEnumerable<Email>> GetEmailsByIdContato(int idContato)
         {
             try
             {
-                _emailService.AddEmail(new Domain.Email());
+                return await _emailService.GetEmailsByIdContato(idContato);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
+        }
 
-            return true;
+        [HttpGet]
+        public async Task<Email> GetEmailById(int id)
+        {
+            try
+            {
+                return await _emailService.GetEmailById(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

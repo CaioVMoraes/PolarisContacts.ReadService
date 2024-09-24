@@ -8,11 +8,9 @@ using static PolarisContacts.CrossCutting.Helpers.Exceptions.CustomExceptions;
 
 namespace PolarisContacts.Application.Services
 {
-    public class CelularService(ICelularRepository celularRepository, IContatoService contatoService, IRegiaoService regiaoService) : ICelularService
+    public class CelularService(ICelularRepository celularRepository) : ICelularService
     {
         private readonly ICelularRepository _celularRepository = celularRepository;
-        private readonly IContatoService _contatoService = contatoService;
-        private readonly IRegiaoService _regiaoService = regiaoService;
 
         public async Task<IEnumerable<Celular>> GetCelularesByIdContato(int idContato)
         {

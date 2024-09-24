@@ -8,8 +8,5 @@ namespace PolarisContacts.Application.Interfaces.Services
     {
         Task<IEnumerable<Telefone>> GetTelefonesByIdContato(int idContato);
         Task<Telefone> GetTelefoneById(int id);
-        //Task AddTelefone(Telefone telefone);
-        Task UpdateTelefone(Telefone telefone);
-        Task DeleteTelefone(int id);
     }
 }

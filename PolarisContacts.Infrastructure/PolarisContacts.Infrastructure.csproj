@@ -14,4 +14,8 @@
     <PackageReference Include="System.Runtime" Version="4.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PolarisContacts.Application\PolarisContacts.Application.csproj" />
+  </ItemGroup>
+
 </Project>

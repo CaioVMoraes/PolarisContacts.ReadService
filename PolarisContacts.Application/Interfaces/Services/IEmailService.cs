@@ -8,8 +8,5 @@ namespace PolarisContacts.Application.Interfaces.Services
     {
         Task<IEnumerable<Email>> GetEmailsByIdContato(int idContato);
         Task<Email> GetEmailById(int id);
-        //Task AddEmail(Email email);
-        Task UpdateEmail(Email email);
-        Task DeleteEmail(int id);
     }
 }

@@ -27,7 +27,5 @@ namespace PolarisContacts.Infrastructure.Repositories
             string query = "SELECT * FROM Celulares WHERE Id = @Id AND Ativo = 1";
             return await conn.QueryFirstOrDefaultAsync<Celular>(query, new { Id = id });
         }
-
     }
-
 }

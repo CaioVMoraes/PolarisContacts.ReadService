@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using PolarisContacts.Application.Interfaces.Services;
-using PolarisContacts.Application.Services;
+using PolarisContacts.ReadService.Application.Interfaces.Services;
+using PolarisContacts.ReadService.Application.Services;
 using PolarisContacts.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
@@ -12,8 +12,8 @@ namespace PolarisContacts.ReadService.Controllers
         private readonly ILogger<UsuarioController> _logger = logger;
         private readonly IUsuarioService _usuarioService = usuarioService;
 
-        [HttpGet]
-        public async Task<Usuario> GetUserByPasswordAsync(string login, string senha)
+        [HttpGet("GetUserByPasswordAsync")]
+        public async Task<Usuario> GetUserByPasswordAsync([FromQuery] string login, [FromQuery] string senha)
         {
             try
             {

@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PolarisContacts.Application\PolarisContacts.Application.csproj" />
+    <ProjectReference Include="..\PolarisContacts.ReadService.Application\PolarisContacts.ReadService.Application.csproj" />
+    <ProjectReference Include="..\PolarisContacts.ReadService.CrossCutting.DependencyInjection\PolarisContacts.ReadService.CrossCutting.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

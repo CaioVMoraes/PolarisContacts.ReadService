@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using PolarisContacts.Application.Interfaces.Services;
-using PolarisContacts.Application.Services;
+using PolarisContacts.ReadService.Application.Interfaces.Services;
+using PolarisContacts.ReadService.Application.Services;
 using PolarisContacts.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
@@ -12,7 +12,7 @@ namespace PolarisContacts.ReadService.Controllers
         private readonly ILogger<ContatoController> _logger = logger;
         private readonly IContatoService _contatoService = contatoService;
 
-        [HttpGet]
+        [HttpGet("GetAllContatosByIdUsuario/{idUsuario}")]
         public async Task<IEnumerable<Contato>> GetAllContatosByIdUsuario(int idUsuario)
         {
             try
@@ -25,7 +25,7 @@ namespace PolarisContacts.ReadService.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("GetContatoByIdAsync/{idContato}")]
         public async Task<Contato> GetContatoByIdAsync(int idContato)
         {
             try
@@ -38,8 +38,8 @@ namespace PolarisContacts.ReadService.Controllers
             }
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Contato>> SearchContatosByIdUsuario(int idUsuario, string searchTerm)
+        [HttpGet("SearchContatosByIdUsuario/{idUsuario}")]
+        public async Task<IEnumerable<Contato>> SearchContatosByIdUsuario(int idUsuario, [FromQuery] string searchTerm)
         {
             try
             {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using PolarisContacts.Application.Interfaces.Services;
-using PolarisContacts.Application.Services;
+using PolarisContacts.ReadService.Application.Interfaces.Services;
+using PolarisContacts.ReadService.Application.Services;
 using PolarisContacts.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
@@ -12,7 +12,7 @@ namespace PolarisContacts.ReadService.Controllers
         private readonly ILogger<EnderecoController> _logger = logger;
         private readonly IEnderecoService _enderecoService = enderecoService;
 
-        [HttpGet]
+        [HttpGet("GetEnderecosByIdContato/{idContato}")]
         public async Task<IEnumerable<Endereco>> GetEnderecosByIdContato(int idContato)
         {
             try
@@ -25,7 +25,7 @@ namespace PolarisContacts.ReadService.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("GetEnderecoById/{id}")]
         public async Task<Endereco> GetEnderecoById(int id)
         {
             try

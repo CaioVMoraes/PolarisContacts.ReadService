@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using PolarisContacts.Application.Interfaces.Services;
-using PolarisContacts.Application.Services;
+using PolarisContacts.ReadService.Application.Interfaces.Services;
+using PolarisContacts.ReadService.Application.Services;
 using PolarisContacts.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
@@ -12,7 +12,7 @@ namespace PolarisContacts.ReadService.Controllers
         private readonly ILogger<TelefoneController> _logger = logger;
         private readonly ITelefoneService _telefoneService = telefoneService;
 
-        [HttpGet]
+        [HttpGet("GetTelefonesByIdContato/{idContato}")]
         public async Task<IEnumerable<Telefone>> GetTelefonesByIdContato(int idContato)
         {
             try
@@ -25,7 +25,7 @@ namespace PolarisContacts.ReadService.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("GetTelefoneById/{id}")]
         public async Task<Telefone> GetTelefoneById(int id)
         {
             try

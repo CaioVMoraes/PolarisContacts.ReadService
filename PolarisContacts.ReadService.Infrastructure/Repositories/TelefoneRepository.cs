@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using PolarisContacts.DatabaseConnection;
 
 namespace PolarisContacts.ReadService.Infrastructure.Repositories
 {

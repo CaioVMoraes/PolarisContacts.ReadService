@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PolarisContacts.ReadService.Application.Interfaces.Repositories;
 using PolarisContacts.Domain.Settings;
 using PolarisContacts.ReadService.Infrastructure.Repositories;
+using PolarisContacts.DatabaseConnection;
 
 namespace Job.ReguaCobrancaDocumentos.CrossCutting.DependencyInjection.Extensions.AddInfrastructureLayer;
 

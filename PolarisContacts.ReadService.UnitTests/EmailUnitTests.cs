@@ -1,11 +1,11 @@
 ﻿using NSubstitute;
-using PolarisContacts.Domain;
 using PolarisContacts.ReadService.Application.Interfaces.Repositories;
 using PolarisContacts.ReadService.Application.Services;
+using PolarisContacts.ReadService.Domain;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
-using static PolarisContacts.CrossCutting.Helpers.Exceptions.CustomExceptions;
+using static PolarisContacts.ConsumerService.Domain.Exceptions.CustomExceptions;
 
 namespace PolarisContacts.ReadService.UnitTests
 {

@@ -1,8 +1,8 @@
 ﻿using NSubstitute;
-using PolarisContacts.Domain;
 using PolarisContacts.ReadService.Application.Interfaces.Repositories;
 using PolarisContacts.ReadService.Application.Interfaces.Services;
 using PolarisContacts.ReadService.Application.Services;
+using PolarisContacts.ReadService.Domain;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -93,7 +93,7 @@ namespace PolarisContacts.ReadService.UnitTests
             _enderecoRepository.GetEnderecosByIdContato(idContato).Returns(enderecos);            
 
             // Act
-            var result = await _contatoService.GetContatoByIdAsync(idContato);
+            var result = await _contatoService.GetContatoById(idContato);
 
             // Assert
             Assert.NotNull(result);
@@ -112,7 +112,7 @@ namespace PolarisContacts.ReadService.UnitTests
             _contatoRepository.GetContatoById(idContato).Returns((Contato)null);
 
             // Act
-            var result = await _contatoService.GetContatoByIdAsync(idContato);
+            var result = await _contatoService.GetContatoById(idContato);
 
             // Assert
             Assert.Null(result);

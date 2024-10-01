@@ -1,10 +1,10 @@
 ﻿using NSubstitute;
-using PolarisContacts.Domain;
 using PolarisContacts.ReadService.Application.Interfaces.Repositories;
 using PolarisContacts.ReadService.Application.Services;
+using PolarisContacts.ReadService.Domain;
 using System.Threading.Tasks;
 using Xunit;
-using static PolarisContacts.CrossCutting.Helpers.Exceptions.CustomExceptions;
+using static PolarisContacts.ConsumerService.Domain.Exceptions.CustomExceptions;
 
 namespace PolarisContacts.ReadService.UnitTests
 {
@@ -55,8 +55,7 @@ namespace PolarisContacts.ReadService.UnitTests
                 Id = 1,
                 Login = login,
                 Senha = senha,
-                Ativo = true,
-                Contatos = new List<Contato>() // Relacionamento de contatos
+                Ativo = true                
             };
 
             _usuarioRepository.GetUserByPasswordAsync(login, senha).Returns(expectedUser);

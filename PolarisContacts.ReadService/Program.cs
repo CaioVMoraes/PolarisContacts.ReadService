@@ -65,3 +65,5 @@ app.MapMetrics(); // Rota para as métricas do Prometheus
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }

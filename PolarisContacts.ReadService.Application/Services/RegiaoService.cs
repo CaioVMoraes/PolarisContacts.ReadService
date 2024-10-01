@@ -1,6 +1,6 @@
 ﻿using PolarisContacts.ReadService.Application.Interfaces.Repositories;
 using PolarisContacts.ReadService.Application.Interfaces.Services;
-using PolarisContacts.Domain;
+using PolarisContacts.ReadService.Domain;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PolarisContacts.ReadService.Application.Interfaces.Services;
 using PolarisContacts.ReadService.Application.Services;
-using PolarisContacts.Domain;
+using PolarisContacts.ReadService.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
 {
@@ -25,12 +25,12 @@ namespace PolarisContacts.ReadService.Controllers
             }
         }
 
-        [HttpGet("GetContatoByIdAsync/{idContato}")]
-        public async Task<Contato> GetContatoByIdAsync(int idContato)
+        [HttpGet("GetContatoById/{idContato}")]
+        public async Task<Contato> GetContatoById(int idContato)
         {
             try
             {
-                return await _contatoService.GetContatoByIdAsync(idContato);
+                return await _contatoService.GetContatoById(idContato);
             }
             catch (Exception ex)
             {

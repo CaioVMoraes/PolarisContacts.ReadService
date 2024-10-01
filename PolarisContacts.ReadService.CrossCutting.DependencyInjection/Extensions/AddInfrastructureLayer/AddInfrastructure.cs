@@ -1,8 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using PolarisContacts.ReadService.Application.Interfaces.Repositories;
-using PolarisContacts.Domain.Settings;
+using PolarisContacts.ReadService.Domain.Settings;
 using PolarisContacts.ReadService.Infrastructure.Repositories;
-using PolarisContacts.DatabaseConnection;
 
 namespace PolarisContacts.ReadService.CrossCutting.DependencyInjection.Extensions.AddInfrastructureLayer;
 
@@ -12,14 +11,14 @@ public static partial class AddInfrastructureLayerExtensions
         services.AddBindedSettings<DbSettings>();
 
     public static IServiceCollection AddRepositories(this IServiceCollection services) =>
-        services.AddTransient<IUsuarioRepository, UsuarioRepository>()
-                .AddTransient<IContatoRepository, ContatoRepository>()
-                .AddTransient<ITelefoneRepository, TelefoneRepository>()
-                .AddTransient<ICelularRepository, CelularRepository>()
-                .AddTransient<IEmailRepository, EmailRepository>()
-                .AddTransient<IRegiaoRepository, RegiaoRepository>()
-                .AddTransient<IEnderecoRepository, EnderecoRepository>()
-                .AddTransient<IDatabaseConnection, PolarisContacts.DatabaseConnection.DatabaseConnection>();
+        services.AddScoped<IUsuarioRepository, UsuarioRepository>()
+                .AddScoped<IContatoRepository, ContatoRepository>()
+                .AddScoped<ITelefoneRepository, TelefoneRepository>()
+                .AddScoped<ICelularRepository, CelularRepository>()
+                .AddScoped<IEmailRepository, EmailRepository>()
+                .AddScoped<IRegiaoRepository, RegiaoRepository>()
+                .AddScoped<IEnderecoRepository, EnderecoRepository>()
+                .AddScoped<IDatabaseConnection, DatabaseConnection>();
 
     public static IServiceCollection AddInfrastructure(this IServiceCollection services) =>
         services

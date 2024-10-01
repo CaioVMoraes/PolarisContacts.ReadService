@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolarisContacts.ReadService
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolarisContacts.ReadService.CrossCutting.DependencyInjection", "PolarisContacts.ReadService.CrossCutting.DependencyInjection\PolarisContacts.ReadService.CrossCutting.DependencyInjection.csproj", "{88F137A9-1742-46B6-85E2-FB6BC175D1CF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolarisContacts.ReadService.Domain", "PolarisContacts.ReadService.Domain\PolarisContacts.ReadService.Domain.csproj", "{74332189-6850-4F2E-A4CA-EB9CDED38044}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{88F137A9-1742-46B6-85E2-FB6BC175D1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F137A9-1742-46B6-85E2-FB6BC175D1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F137A9-1742-46B6-85E2-FB6BC175D1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74332189-6850-4F2E-A4CA-EB9CDED38044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74332189-6850-4F2E-A4CA-EB9CDED38044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74332189-6850-4F2E-A4CA-EB9CDED38044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74332189-6850-4F2E-A4CA-EB9CDED38044}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

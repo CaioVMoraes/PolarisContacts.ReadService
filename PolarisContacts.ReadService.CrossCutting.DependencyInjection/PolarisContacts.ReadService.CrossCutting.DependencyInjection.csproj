@@ -11,11 +11,11 @@
     <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="8.0.0" />
-    <PackageReference Include="PolarisContacts.DatabaseConnection" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PolarisContacts.ReadService.Application\PolarisContacts.ReadService.Application.csproj" />
+    <ProjectReference Include="..\PolarisContacts.ReadService.Domain\PolarisContacts.ReadService.Domain.csproj" />
     <ProjectReference Include="..\PolarisContacts.ReadService.Infrastructure\PolarisContacts.ReadService.Infrastructure.csproj" />
   </ItemGroup>
 

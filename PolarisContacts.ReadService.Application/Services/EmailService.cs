@@ -1,10 +1,10 @@
 ﻿using PolarisContacts.ReadService.Application.Interfaces.Repositories;
 using PolarisContacts.ReadService.Application.Interfaces.Services;
-using PolarisContacts.Domain;
+using PolarisContacts.ReadService.Domain;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using static PolarisContacts.CrossCutting.Helpers.Exceptions.CustomExceptions;
+using static PolarisContacts.ConsumerService.Domain.Exceptions.CustomExceptions;
 
 namespace PolarisContacts.ReadService.Application.Services
 {

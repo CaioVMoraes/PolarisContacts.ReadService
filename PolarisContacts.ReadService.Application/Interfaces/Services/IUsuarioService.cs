@@ -1,4 +1,4 @@
-﻿using PolarisContacts.Domain;
+﻿using PolarisContacts.ReadService.Domain;
 using System.Threading.Tasks;
 
 namespace PolarisContacts.ReadService.Application.Interfaces.Services

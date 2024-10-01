@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PolarisContacts.ReadService.Application.Interfaces.Services;
-using PolarisContacts.Domain;
+using PolarisContacts.ReadService.Domain;
 
 namespace PolarisContacts.ReadService.Controllers
 {

@@ -1,10 +1,9 @@
 ﻿using Dapper;
 using PolarisContacts.ReadService.Application.Interfaces.Repositories;
-using PolarisContacts.Domain;
+using PolarisContacts.ReadService.Domain;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
-using PolarisContacts.DatabaseConnection;
 
 namespace PolarisContacts.ReadService.Infrastructure.Repositories
 {

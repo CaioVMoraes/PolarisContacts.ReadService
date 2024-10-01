@@ -1,6 +1,6 @@
 ﻿using PolarisContacts.ReadService.Application.Interfaces.Repositories;
 using PolarisContacts.ReadService.Application.Interfaces.Services;
-using PolarisContacts.Domain;
+using PolarisContacts.ReadService.Domain;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,7 +31,7 @@ namespace PolarisContacts.ReadService.Application.Services
             return contatos;
         }
 
-        public async Task<Contato> GetContatoByIdAsync(int idContato)
+        public async Task<Contato> GetContatoById(int idContato)
         {
             var contato = await _contatoRepository.GetContatoById(idContato);
             if (contato is not null)

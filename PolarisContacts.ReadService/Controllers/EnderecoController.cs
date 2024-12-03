@@ -6,7 +6,7 @@ using PolarisContacts.ReadService.Domain;
 namespace PolarisContacts.ReadService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Read/[controller]")]
     public class EnderecoController(ILogger<EnderecoController> logger, IEnderecoService enderecoService) : ControllerBase
     {
         private readonly ILogger<EnderecoController> _logger = logger;

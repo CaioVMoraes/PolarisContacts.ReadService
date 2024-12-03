@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sql-server
+  labels:
+    app: sql-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sql-server
+  template:
+    metadata:
+      labels:
+        app: sql-server
+    spec:
+      containers:
+        - name: sql-server
+          image: mcr.microsoft.com/mssql/server:2022-latest
+          ports:
+            - containerPort: 1433
+          env:
+            - name: ACCEPT_EULA
+              value: "Y"  # Aceita os termos de licença
+            - name: MSSQL_SA_PASSWORD
+              value: "YourStrongPassword!"  # Substitua por uma senha forte
+          volumeMounts:
+            - name: sql-data
+              mountPath: /var/opt/mssql  # Persistência dos dados
+      volumes:
+        - name: sql-data
+          emptyDir: {}  # Substitua por PVC para persistência real
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sql-server
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 1433       # Porta do serviço
+      targetPort: 1433 # Porta no contêiner
+  selector:
+    app: sql-server

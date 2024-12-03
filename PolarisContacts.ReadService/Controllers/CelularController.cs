@@ -5,7 +5,7 @@ using PolarisContacts.ReadService.Domain;
 namespace PolarisContacts.ReadService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Read/[controller]")]
     public class CelularController(ILogger<CelularController> logger, ICelularService celularService) : ControllerBase
     {
         private readonly ILogger<CelularController> _logger = logger;

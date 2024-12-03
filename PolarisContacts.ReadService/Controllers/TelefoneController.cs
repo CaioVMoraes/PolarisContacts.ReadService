@@ -6,7 +6,7 @@ using PolarisContacts.ReadService.Domain;
 namespace PolarisContacts.ReadService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Read/[controller]")]
     public class TelefoneController(ILogger<TelefoneController> logger, ITelefoneService telefoneService) : ControllerBase
     {
         private readonly ILogger<TelefoneController> _logger = logger;

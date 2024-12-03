@@ -6,7 +6,7 @@ using PolarisContacts.ReadService.Domain;
 namespace PolarisContacts.ReadService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Read/[controller]")]
     public class EmailController(ILogger<EmailController> logger, IEmailService emailService) : ControllerBase
     {
         private readonly ILogger<EmailController> _logger = logger;

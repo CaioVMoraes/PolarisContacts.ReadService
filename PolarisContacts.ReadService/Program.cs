@@ -21,7 +21,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
@@ -64,6 +64,6 @@ app.MapMetrics(); // Rota para as métricas do Prometheus
 
 app.MapControllers();
 
-app.Run();
+app.Run("http://0.0.0.0:8081");
 
 public partial class Program { }

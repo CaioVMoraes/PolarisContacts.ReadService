@@ -8,7 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5041"
+      "applicationUrl": "http://localhost:8080"
     },
     "https": {
       "commandName": "Project",
@@ -18,7 +18,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7048;http://localhost:5041"
+      "applicationUrl": "https://localhost:8081"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -31,6 +31,20 @@
     "ReadService": {
       "commandName": "IIS",
       "launchBrowser": true
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "ASPNETCORE_HTTP_PORTS": "8080",
+        "ASPNETCORE_HTTPS_PORTS": "8081",
+        "DOTNET_RUNNING_IN_CONTAINER": "true",
+        "DOTNET_USE_POLLING_FILE_WATCHER": "true"
+      },
+      "publishAllPorts": true,
+      "useSSL": false
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",

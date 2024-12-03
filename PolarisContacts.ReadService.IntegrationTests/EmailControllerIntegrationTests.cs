@@ -47,7 +47,7 @@ namespace PolarisContacts.IntegrationTests
             _emailServiceMock.GetEmailsByIdContato(validIdContato).Returns(emails);
 
             // Act
-            var response = await _client.GetAsync($"/Email/GetEmailsByIdContato/{validIdContato}");
+            var response = await _client.GetAsync($"/Read/Email/GetEmailsByIdContato/{validIdContato}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -72,7 +72,7 @@ namespace PolarisContacts.IntegrationTests
             _emailServiceMock.GetEmailById(validId).Returns(expectedEmail);
 
             // Act
-            var response = await _client.GetAsync($"/Email/GetEmailById/{validId}");
+            var response = await _client.GetAsync($"/Read/Email/GetEmailById/{validId}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -89,7 +89,7 @@ namespace PolarisContacts.IntegrationTests
             _emailServiceMock.GetEmailById(invalidId).Returns((Email)null); // Simula não encontrado
 
             // Act
-            var response = await _client.GetAsync($"/Email/GetEmailById/{invalidId}");
+            var response = await _client.GetAsync($"/Read/Email/GetEmailById/{invalidId}");
 
             // Assert
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);

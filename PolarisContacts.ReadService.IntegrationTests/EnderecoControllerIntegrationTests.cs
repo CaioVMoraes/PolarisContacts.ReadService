@@ -46,7 +46,7 @@ namespace PolarisContacts.IntegrationTests
             _enderecoServiceMock.GetEnderecosByIdContato(validIdContato).Returns(enderecos);
 
             // Act
-            var response = await _client.GetAsync($"/Endereco/GetEnderecosByIdContato/{validIdContato}");
+            var response = await _client.GetAsync($"/Read/Endereco/GetEnderecosByIdContato/{validIdContato}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -76,7 +76,7 @@ namespace PolarisContacts.IntegrationTests
             _enderecoServiceMock.GetEnderecoById(validId).Returns(expectedEndereco);
 
             // Act
-            var response = await _client.GetAsync($"/Endereco/GetEnderecoById/{validId}");
+            var response = await _client.GetAsync($"/Read/Endereco/GetEnderecoById/{validId}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -93,7 +93,7 @@ namespace PolarisContacts.IntegrationTests
             _enderecoServiceMock.GetEnderecoById(invalidId).Returns((Endereco)null); // Retorna null para simular não encontrado
 
             // Act
-            var response = await _client.GetAsync($"/Endereco/GetEnderecoById/{invalidId}");
+            var response = await _client.GetAsync($"/Read/Endereco/GetEnderecoById/{invalidId}");
 
             // Assert
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);

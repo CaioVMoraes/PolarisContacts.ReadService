@@ -46,7 +46,7 @@ namespace PolarisContacts.IntegrationTests
             _telefoneServiceMock.GetTelefonesByIdContato(validIdContato).Returns(telefones);
 
             // Act
-            var response = await _client.GetAsync($"/Telefone/GetTelefonesByIdContato/{validIdContato}");
+            var response = await _client.GetAsync($"/Read/Telefone/GetTelefonesByIdContato/{validIdContato}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -73,7 +73,7 @@ namespace PolarisContacts.IntegrationTests
             _telefoneServiceMock.GetTelefoneById(validId).Returns(expectedTelefone);
 
             // Act
-            var response = await _client.GetAsync($"/Telefone/GetTelefoneById/{validId}");
+            var response = await _client.GetAsync($"/Read/Telefone/GetTelefoneById/{validId}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -90,7 +90,7 @@ namespace PolarisContacts.IntegrationTests
             _telefoneServiceMock.GetTelefoneById(invalidId).Returns((Telefone)null); // Retorna null para simular não encontrado
 
             // Act
-            var response = await _client.GetAsync($"/Telefone/GetTelefoneById/{invalidId}");
+            var response = await _client.GetAsync($"/Read/Telefone/GetTelefoneById/{invalidId}");
 
             // Assert
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);

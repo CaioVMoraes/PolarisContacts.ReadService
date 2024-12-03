@@ -43,7 +43,7 @@ namespace PolarisContacts.IntegrationTests
             _usuarioServiceMock.GetUserByPasswordAsync(login, senha).Returns(expectedUser);
 
             // Act
-            var response = await _client.GetAsync($"/Usuario/GetUserByPasswordAsync?login={login}&senha={senha}");
+            var response = await _client.GetAsync($"/Read/Usuario/GetUserByPasswordAsync?login={login}&senha={senha}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -60,7 +60,7 @@ namespace PolarisContacts.IntegrationTests
             var senha = "somePassword";
 
             // Act
-            var response = await _client.GetAsync($"/Usuario/GetUserByPasswordAsync?login={login}&senha={senha}");
+            var response = await _client.GetAsync($"/Read/Usuario/GetUserByPasswordAsync?login={login}&senha={senha}");
 
             // Assert
             Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
@@ -74,7 +74,7 @@ namespace PolarisContacts.IntegrationTests
             var senha = ""; // Senha inválida
 
             // Act
-            var response = await _client.GetAsync($"/Usuario/GetUserByPasswordAsync?login={login}&senha={senha}");
+            var response = await _client.GetAsync($"/Read/Usuario/GetUserByPasswordAsync?login={login}&senha={senha}");
 
             // Assert
             Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
@@ -90,10 +90,10 @@ namespace PolarisContacts.IntegrationTests
             _usuarioServiceMock.GetUserByPasswordAsync(login, senha).Returns((Usuario)null); // Simula não encontrado
 
             // Act
-            var response = await _client.GetAsync($"/Usuario/GetUserByPasswordAsync?login={login}&senha={senha}");
+            var response = await _client.GetAsync($"/Read/Usuario/GetUserByPasswordAsync?login={login}&senha={senha}");
 
             // Assert
-            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
     }
 }

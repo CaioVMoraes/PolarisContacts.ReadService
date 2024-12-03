@@ -47,7 +47,7 @@ namespace PolarisContacts.IntegrationTests
             _celularServiceMock.GetCelularesByIdContato(validIdContato).Returns(Celulares);
 
             // Act
-            var response = await _client.GetAsync($"/Celular/GetCelularesByIdContato/{validIdContato}");
+            var response = await _client.GetAsync($"/Read/Celular/GetCelularesByIdContato/{validIdContato}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -66,7 +66,7 @@ namespace PolarisContacts.IntegrationTests
             _celularServiceMock.GetCelularById(validId).Returns(expectedCelular);
 
             // Act
-            var response = await _client.GetAsync($"/Celular/GetCelularById/{validId}");
+            var response = await _client.GetAsync($"/Read/Celular/GetCelularById/{validId}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -83,7 +83,7 @@ namespace PolarisContacts.IntegrationTests
             _celularServiceMock.GetCelularById(invalidId).Returns((Celular)null); // Retorna null para simular não encontrado
 
             // Act
-            var response = await _client.GetAsync($"/Celular/GetCelularById/{invalidId}");
+            var response = await _client.GetAsync($"/Read/Celular/GetCelularById/{invalidId}");
 
             // Assert
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);

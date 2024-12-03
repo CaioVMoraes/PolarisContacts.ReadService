@@ -47,7 +47,7 @@ namespace PolarisContacts.IntegrationTests
             _contatoServiceMock.GetAllContatosByIdUsuario(validIdUsuario).Returns(contatos);
 
             // Act
-            var response = await _client.GetAsync($"/Contato/GetAllContatosByIdUsuario/{validIdUsuario}");
+            var response = await _client.GetAsync($"/Read/Contato/GetAllContatosByIdUsuario/{validIdUsuario}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -75,7 +75,7 @@ namespace PolarisContacts.IntegrationTests
             _contatoServiceMock.GetContatoById(validIdContato).Returns(expectedContato);
 
             // Act
-            var response = await _client.GetAsync($"/Contato/GetContatoById/{validIdContato}");
+            var response = await _client.GetAsync($"/Read/Contato/GetContatoById/{validIdContato}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -92,7 +92,7 @@ namespace PolarisContacts.IntegrationTests
             _contatoServiceMock.GetContatoById(invalidIdContato).Returns((Contato)null); // Simula não encontrado
 
             // Act
-            var response = await _client.GetAsync($"/Contato/GetContatoById/{invalidIdContato}");
+            var response = await _client.GetAsync($"/Read/Contato/GetContatoById/{invalidIdContato}");
 
             // Assert
             Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
@@ -113,7 +113,7 @@ namespace PolarisContacts.IntegrationTests
             _contatoServiceMock.SearchContatosByIdUsuario(validIdUsuario, searchTerm).Returns(contatos);
 
             // Act
-            var response = await _client.GetAsync($"/Contato/SearchContatosByIdUsuario/{validIdUsuario}?searchTerm={searchTerm}");
+            var response = await _client.GetAsync($"/Read/Contato/SearchContatosByIdUsuario/{validIdUsuario}?searchTerm={searchTerm}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -132,7 +132,7 @@ namespace PolarisContacts.IntegrationTests
             _contatoServiceMock.SearchContatosByIdUsuario(invalidIdUsuario, searchTerm).Returns(new List<Contato>()); // Simula não encontrado
 
             // Act
-            var response = await _client.GetAsync($"/Contato/SearchContatosByIdUsuario/{invalidIdUsuario}?searchTerm={searchTerm}");
+            var response = await _client.GetAsync($"/Read/Contato/SearchContatosByIdUsuario/{invalidIdUsuario}?searchTerm={searchTerm}");
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);

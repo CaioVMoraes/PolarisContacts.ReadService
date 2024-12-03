@@ -1,3 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sql-server-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi  # Espaço de armazenamento alocado
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,7 +40,8 @@ spec:
               mountPath: /var/opt/mssql  # Persistência dos dados
       volumes:
         - name: sql-data
-          emptyDir: {}  # Substitua por PVC para persistência real
+          persistentVolumeClaim:
+            claimName: sql-server-pvc
 ---
 apiVersion: v1
 kind: Service

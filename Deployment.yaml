@@ -19,3 +19,6 @@ spec:
           image: caiovsk/readservice:latest  # Certifique-se de que a imagem está no Docker Hub
           ports:
             - containerPort: 8081  # Porta exposta no contêiner
+          env: 
+            - name: DbSettings__ConnectionString
+              value: "Data Source=sql-server,1433;Initial Catalog=PolarisContacts;Persist Security Info=True;User ID=sa;Password=YourStrongPassword!;"
